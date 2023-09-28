@@ -6,9 +6,9 @@ def represent(el):
     return '   '
 
 def show(grid):
+    print('-' * 13)
     for line in grid:
-        print('|'.join(map(represent, line)))
-
-
-
-
+        print('|', end='')
+        print('|'.join(map(represent, line)), end='')
+        print('|')
+        print('-' * 13)
