@@ -14,19 +14,16 @@ def add(grid, value, position):
 
 def is_game_over(grid):
     if (grid[0][0] == grid[1][1] == grid[2][2] or grid[0][2] == grid[1][1] == grid[2][0]) and grid[1][1] is not None:
-        return f"Game is over"
+        return True
     if grid[0][0] == grid[1][0] == grid[2][0] or grid[0][1] == grid[1][1] == grid[2][1] or grid[0][2] == grid[1][2] == grid[2][2]:
-        return f"Game is over"
+        return True
     for row in grid:
         if row[0] is not None and len(set(row)) == 1:
-            return f"Game is over"
-    flag = False
+            return True
+    flag = True
     for i in range(3):
         if None in grid[i]:
-            flag = True
-    if flag:
-        return 'Next turn'
-    else:
-        return 'Game is over, No one won)))'
+            flag = False
+    return flag
     
             
