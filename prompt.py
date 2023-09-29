@@ -15,16 +15,17 @@ def get_value():
     return value
 
 def get_position(grid):
-    num= int(input('Enter the position (1-9) where you want to insert your letter: '))
+    num= input('Enter the position (1-9) where you want to insert your letter: ')
     while True:
-        if num in range(1,10):
+        if int(num) in range(1,10):
+            num=int(num)
             line_idx = (num - 1) // 3
             el_idx = (num - 1) % 3
-        elif grid[line_idx][el_idx] is not None:
-            position = num
-            break
+            if grid[line_idx][el_idx] is not None:
+                position = num
+                break
         else: 
-            num=int(input('The position is not valid. Enter another position (1-9): '))
+            num=input('The position is not valid. Enter another position (1-9): ')
             continue
 
     return position
