@@ -22,7 +22,7 @@ def is_game_over(grid):
         if row[0] is not None and len(set(row)) == 1:
             return True
     flag = True
-    for i in len(grid):
+    for i in range(len(grid)):
         if None in grid[i]:
             flag = False
     return flag
