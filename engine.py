@@ -1,3 +1,5 @@
+import random
+
 def add(grid, value, position):
     """
         Positions
@@ -25,3 +27,13 @@ def is_game_over(grid):
         if None in grid[i]:
             return False
     return True
+
+def computer_step(grid, comp_value):
+    free_cages = []
+    for i in range(3):
+        for j in range(3):
+            if grid[i][j] is None:
+                free_cages.append((i,j))
+    position = random.choice(free_cages)
+    grid[position[0]][position[1]] = comp_value
+    
