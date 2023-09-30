@@ -23,7 +23,7 @@ def get_position(grid):
             num = int(num)
             line_idx = (num - 1) // 3
             el_idx = (num - 1) % 3
-            if grid[line_idx][el_idx] is not None:
+            if grid[line_idx][el_idx] is None:
                 return num
             else:
                 print("The position is already used")
