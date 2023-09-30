@@ -3,10 +3,10 @@ from engine import add, is_game_over
 from state import show
 
 
-BOARD_SIZE = 3
+BOARD_SIZE = int(input('Enter board size(3, 4, 5): '))
 grid = [ [None] * BOARD_SIZE for _ in range(BOARD_SIZE)]
 
-print("Hello!")
+print("Hi there!")
 print("Welcome to XO game!!!")
 USER_VALUES = {'user1': get_value()}
 USER_VALUES['user2'] = 1 - USER_VALUES['user1']
