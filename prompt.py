@@ -1,19 +1,12 @@
 def get_value():
-    string = input("Enter your letter (X or O): ")
     while True:
-        if string not in 'XxOo':
-            string = input(
-                "The letter is not valid. Reenter your letter (X or O): ")
-            continue
+        string = input("Enter your letter (X or O): ").upper()
+        if string in 'X' or string in "O":
+            if string == 'X':
+                return 1
+            return 0
         else:
-            if string in 'Xx':
-                value = 1
-            else:
-                value = 0
-            break
-
-    return value
-
+            print("The letter is not valid. Reenter your letter (X or O): ")
 
 def get_position(grid):
     while True:
