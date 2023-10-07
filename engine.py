@@ -1,15 +1,18 @@
 import random
 
-def add(grid, value, position):
+def convert_position(position):
     """
-        Positions
-
         [1, 2, 3]
         [4, 5, 6]
         [7, 8, 9]
     """
-    line_idx = (position - 1) // 3
-    el_idx = (position - 1) % 3
+    return (position - 1) // 3, (position - 1) % 3
+
+def add(grid, value, position):
+    if type(position) == int:
+        line_idx, el_idx = convert_position(position)
+    else:
+        line_idx, el_idx = position
     if grid[line_idx][el_idx] is not None:
         raise Exception('The field is not empty')
     grid[line_idx][el_idx] = value
@@ -35,5 +38,4 @@ def computer_step(grid, comp_value):
             if grid[i][j] is None:
                 free_cages.append((i,j))
     position = random.choice(free_cages)
-    grid[position[0]][position[1]] = comp_value
-    
+    add(grid, comp_value, position)
