@@ -1,10 +1,8 @@
 def get_value():
     while True:
         string = input("Enter your letter (X or O): ").upper()
-        if string in 'X' or string in "O":
-            if string == 'X':
-                return 1
-            return 0
+        if string in ('X', 'O'):
+            return int(string == 'X')
         else:
             print("The letter is not valid. Reenter your letter (X or O): ")
 
